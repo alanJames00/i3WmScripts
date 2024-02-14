@@ -28,14 +28,17 @@ function send_notification {
 # Main function => cmdArgs can be: up or down
 
 case $1 in
-
-    up)
-    echo "upping"
-    
+up)
+    # Handle brightness up case
+    brightnessctl set +5%
+    send_notification
     ;;
+    
 
     down)
-    echo "downing"
+    # handle brightness down case
+    brightnessctl set 5%-
+    send_notification
 
     ;;
 
