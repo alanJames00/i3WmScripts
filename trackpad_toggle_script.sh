@@ -13,12 +13,19 @@ function get_trackpad_status {
 function disable_trackpad {
 
     xinput --disable $trackpad_id
+
+    # send notification
+    notify-send "Trackpad Disabled"
 }
 
 function enable_trackpad {
     
     xinput --enable $trackpad_id
+
+    # send notification
+    notify-send "Trackpad Enabled"
 }
+
 
 # Main function
 status=$(get_trackpad_status)
