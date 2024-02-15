@@ -10,6 +10,15 @@ function get_trackpad_status {
     echo $st
 }
 
+function disable_trackpad {
+
+    xinput --disable $trackpad_id
+}
+
+function enable_trackpad {
+    
+    xinput --enable $trackpad_id
+}
 
 # Main function
 status=$(get_trackpad_status)
@@ -17,10 +26,13 @@ status=$(get_trackpad_status)
 case $status in
 
     1)  
-        echo "enabled"
         # currently enabled so disable
+        disable_trackpad
+
     ;;
     0)  
-        echo "dis"
         # currently disabled so enable
+        enable_trackpad
+
+    ;;
 esac
