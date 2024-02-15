@@ -16,8 +16,11 @@ status=$(get_trackpad_status)
 
 case $status in
 
-    1)
+    1)  
+        echo "enabled"
         # currently enabled so disable
     ;;
-
+    0)  
+        echo "dis"
+        # currently disabled so enable
 esac
